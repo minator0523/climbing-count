@@ -27,7 +27,7 @@ $ docker exec -it gdal /bin/bash
 ```
 ### 2.3 gdalを使いシェープファイルからSQLに変換
 ```
-root@gdal:/# ogr2ogr -f "PGDump" /output/meizan02.sql -nln 100meizan -lco GEOMETRY_NAME=geom /input/meizan02.shp
+root@gdal:/# ogr2ogr -f "PGDump" /output/meizan02.sql -nln meizan -lco GEOMETRY_NAME=geom /input/meizan02.shp
 ```
 * 変換前のファイル：
   * `./input/meizan02.cpg`
