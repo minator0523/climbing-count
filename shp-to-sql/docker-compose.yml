@@ -1,0 +1,11 @@
+
+services:
+
+  gdal:
+    image: osgeo/gdal:ubuntu-full-3.0.2
+    container_name: gdal
+    hostname: gdal
+    volumes: 
+      - "./input:/input"
+      - "./output:/output"
+    tty: true
