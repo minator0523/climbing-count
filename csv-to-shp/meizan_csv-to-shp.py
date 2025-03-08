@@ -27,11 +27,10 @@ def main():
 
 
     # シェープファイル書き出し
-    df_merge["count"] = np.zeros(len(df_merge), dtype=np.int32)
+    df_merge["count"] = np.zeros(len(df_merge)).astype('int')
     geometry = [Point(xy) for xy in zip(df_merge["longitude"], df_merge["latitude"])]
     geo_df = gpd.GeoDataFrame(df_merge, geometry=geometry)
     geo_df = geo_df.drop(columns=['latitude', 'longitude'])
-    geo_df["count"] = np.zeros(len(geo_df))
     print(geo_df)
     ofile = f"./output/meizan02.shp"
     geo_df.to_file(driver='ESRI Shapefile', filename=ofile)
