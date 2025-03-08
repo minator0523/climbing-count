@@ -30,6 +30,7 @@ def main():
     geometry = [Point(xy) for xy in zip(df["longitude"], df["latitude"])]
     geo_df = gpd.GeoDataFrame(df, geometry=geometry)
     geo_df = geo_df.drop(columns=['latitude', 'longitude'])
+    geo_df["count"] = np.zeros(len(geo_df))
     ofile = f"./output/meizan02.shp"
     geo_df.to_file(driver='ESRI Shapefile', filename=ofile)
     print(f"ofile: {ofile}")
