@@ -22,7 +22,7 @@ def main():
 
         # データを整える
         df = df.rename(columns=conv_dict)
-        df = df.drop(columns=['yomi', 'prefecture', 'region', 'remarks'])
+        df = df.drop(columns=['yomi', 'prefecture', 'region', 'remarks', 'No'])
         df_merge = pd.concat([df_merge, df])
 
 
